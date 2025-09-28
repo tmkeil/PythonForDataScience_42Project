@@ -2,6 +2,15 @@ import sys
 
 
 def main():
+    """
+    The main function
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     NESTED_MORSE = {
         " ": "/ ",
         "A": ".- ",
