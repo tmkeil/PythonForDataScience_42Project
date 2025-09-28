@@ -9,4 +9,4 @@ def ft_filter(function, iterable):
     Returns:
         A generator with the filtered elements
     """
-    return ([item for item in iterable if function is None or function(item)])
+    return (item for item in iterable if function is None or function(item))
