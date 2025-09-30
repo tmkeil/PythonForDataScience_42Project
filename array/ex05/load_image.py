@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-from zoom import ft_zoom
+from pimp_image import ft_invert, ft_red, ft_green, ft_blue, ft_grey
 
 
 def ft_load(path: str) -> np.array:
@@ -28,22 +28,17 @@ def ft_load(path: str) -> np.array:
 
 
 def main():
-    img = ft_load("animal.jpeg")
+    img = ft_load("landscape.jpg")
     # If the image is empty
     if img.size == 0:
         return
-    print(f"The shape of image is: {img.shape}")
-    print(img)
-    # Slice the image to zoom the 1. and 2. dim.
-    zoomed = ft_zoom(img.tolist(), 100, 500)
-    # Get an array from the sliced list.
-    zoomed_array = np.array(zoomed, dtype=np.uint8)
-    red_chan = zoomed_array[:, :, 2]
-    print("New shape after slicing: ", red_chan.shape)
-    print(red_chan)
-    # Convert back to an image
-    Image.fromarray(red_chan).show()
-
+    print("Inverts the color of the image received.")
+    # Convert to an image
+    Image.fromarray(ft_invert(img)).show()
+    Image.fromarray(ft_red(img)).show()
+    Image.fromarray(ft_green(img)).show()
+    Image.fromarray(ft_blue(img)).show()
+    Image.fromarray(ft_grey(img)).show()
 
 if __name__ == "__main__":
     main()
