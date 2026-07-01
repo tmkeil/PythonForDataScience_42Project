@@ -32,6 +32,8 @@ def main():
     if len(sys.argv) > 2:
         print("AssertionError: more than one argument is provided")
         return
+    if len(sys.argv) == 1:
+        return
     is_num, num = isnum(sys.argv[1])
     if not is_num:
         print("AssertionError: argument is not an integer")

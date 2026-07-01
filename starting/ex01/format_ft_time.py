@@ -26,26 +26,12 @@ def ft_easy(tstr):
     # return type tuple (string, length)
     return tstr, length
 
-
-
-
-
-
 if __name__ == "__main__":
     t = time.time()
-    tstr = str(round(t, 4))
-    
-    str1, len1 = ft_easy(tstr)
-    # or easier with f-string formatting
-    # f"{t:,.4f}": format number with commas and 4 decimals
-    # str1 = f"{t:,.4f}".replace(',', '.')
-    
-    str2, len2 = ft_science(tstr, len1)
-    # or easier with f-string formatting
-    # f"{t:.4e}": format number in scientific notation with 4 decimals
-    # str2 = f"{t:.2e}".replace(',', '.')
-    
+
+    str1 = f"{t:,.4f}"
+    str2 = f"{t:.2e}"
+
     print(f"Seconds since January 1, 1970: {str1} or {str2} in scientific notation")
     x = datetime.datetime.now()
-    print(f"{x.strftime('%b')} {x.strftime('%d')} {x.strftime('%Y')}")
-    
+    print(f"{x.strftime('%b')} {x.day} {x.strftime('%Y')}")

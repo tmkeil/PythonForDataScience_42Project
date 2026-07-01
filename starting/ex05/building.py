@@ -1,4 +1,5 @@
 import sys
+import string
 
 
 def ft_sum(gen):
@@ -52,7 +53,7 @@ def getPunctuations(user_input):
         int: Number of punctuation marks
     """
 
-    return ft_sum(1 for c in user_input if c in '.')
+    return ft_sum(1 for c in user_input if c in string.punctuation)
 
 
 def getSpaces(user_input):
